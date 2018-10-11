@@ -4,16 +4,29 @@ This repo is a code-along project for the React & Redux Course of the [React Nan
 
 Most of the commits in this repository correspond to videos in the program.
 
-### State Rules
+## State Rules
+
 1. Only an event can change the state of the store
 2. The function that returns the new state needs to be a pure function
 
-### What are Pure Functions?
+## What are Pure Functions
+
 Pure functions are integral to how state in Redux applications is updated. By definition, pure functions:
 
 1. Return the same result if the same arguments are passed in
 2. Depend solely on the arguments passed into them
 3. Do not produce side effects
+
+## Functions Returning Functions 💡
+
+Redux middleware leverages a concept called higher-order functions. A higher-order function is a function that either:
+
+* accepts a function as an argument
+* returns a function
+
+Higher-order functions are a powerful programming technique that allow functions to be significantly more dynamic. You've actually already written a higher-order function in this course. The createRemoveButton() function is a higher-order function because the onClick parameter is expected to be a function (because onClick is set up as an event listener callback function.
+
+For a refresher on higher-order functions, feel free to check out Lesson 2 in [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud711).
 
 ## Project Setup
 
