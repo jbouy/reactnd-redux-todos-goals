@@ -133,6 +133,17 @@
       }
     }
 
+    function handleInitialData() {
+      return (dispatch) => {
+        Promise.all([
+          API.fetchTodos(),
+          API.fetchGoals()
+        ]).then(([ todos, goals ]) => {
+          dispatch(receiveDataAction(todos, goals));
+        })
+      }
+    }
+
     // Reducer function
     // Pure function that takes in the state and the action, returns new state.
     function todos(state = [], action) {
@@ -313,15 +324,10 @@
     class App extends React.Component {
       componentDidMount() {
         const {store} = this.props;        
+        
+        store.dispatch(handleInitialData());        
 
         store.subscribe(() => this.forceUpdate());
-
-        Promise.all([
-          API.fetchTodos(),
-          API.fetchGoals()
-        ]).then(([ todos, goals ]) => {
-          store.dispatch(receiveDataAction(todos, goals));
-        })
       }
 
       render() {
