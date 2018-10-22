@@ -28,6 +28,25 @@ Higher-order functions are a powerful programming technique that allow functions
 
 For a refresher on higher-order functions, feel free to check out Lesson 2 in [Object-Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud711).
 
+## "Rails-style" Organization
+
+To recap, we've organized the individual elements of our app with a "Rails-style" approach. That is, assets are grouped by "type" or "capability": any action will be found in the Actions folder, any reducer will be found in Reducers, and so on. In fact, the “real world” example from [Redux on GitHub](https://github.com/reactjs/redux/tree/master/examples/real-world) structures the app this very way. Under this directory structure, if we wanted to import all actions into a component, we can get them all in a single import!
+
+``` text
+Frontend
+   - Components
+      - component1.js
+      - component2.js
+      - component3.js
+   - Actions
+      - action1.js
+      - action2.js
+   - Reducers
+      - reducer1.js
+   - Util
+   - Store
+```
+
 ## Project Setup
 
 1. Clone the Project - git clone https://github.com/udacity/reactnd-redux-todos-goals.git
